@@ -671,10 +671,12 @@
 }
 
 .story-image img {
-  width: 80%;
-  border-radius: 16px;
-  box-shadow: 0 6px 20px rgba(0,0,0,0.1);
-  object-fit: cover;
+ max-width: 90%;       /* biar ga full */
+  max-height: 250px;    /* batasi tinggi */
+  margin: 0 auto 20px;  /* center */
+  display: block;
+  border-radius: 12px;  /* biar modern */
+  object-fit: cover; 
 }
 
 .story-content h2 {
@@ -716,20 +718,20 @@
   }
 }
 
+/* SDGs Logos - center + responsive */
 .sdgs-logos {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 10px;
-  margin-top: -100px;
-  max-width: 300px;   /* biar rapih, ga melebar */
-  margin-bottom: -100px;
-  
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 15px;
+  margin: 20px auto 0;
+  max-width: 320px;   /* batasi biar ga terlalu panjang */
 }
 
 .sdgs-logos img {
-  width: 60px;        /* kecil, minimalis */
+  width: 55px;
   height: auto;
-  justify-self: center;
   transition: transform 0.2s ease;
 }
 
@@ -737,23 +739,21 @@
   transform: scale(1.1);
 }
 
-/* Responsive */
+/* Mobile optimization */
 @media (max-width: 600px) {
-  .sdgs-logos {
-    grid-template-columns: repeat(2, 1fr); /* 2x2 kalau layar kecil */
-    max-width: 200px;
-    margin-left: auto;
-    margin-right: auto;
-    margin-top: 2px;
+  .story-image {
+    max-height: 180px;  /* lebih kecil di HP */
   }
+
+  .sdgs-logos {
+    gap: 10px;
+    max-width: 240px;
+  }
+
   .sdgs-logos img {
-    width: 70px;
+    width: 45px;
   }
 }
-
-
-
-
   </style>
 </head>
 <body data-theme="light">
@@ -1533,3 +1533,4 @@ document.getElementById("subscribeBtn").addEventListener("click", () => {
 
 
 </html>
+
